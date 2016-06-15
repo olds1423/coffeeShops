@@ -1,23 +1,25 @@
 // Javascript portion of my Campefire coffee project
 // Global variables
 var allStores = [];
-// var allTimesOpen = [600am, 700pm, 8:00]
+var allTimesOpen = ["6:00am", "7:00am", "8:00am", "9:00am", "10:00am", "11:00am", "12:00pm", "1:00pm", "2:00pm", "3:00pm", "4:00pm", "5:00pm", "6:00pm", "7:00pm", "8:00pm"];
 
 //Constructor
-function Store(storeName, minCustomersHr, maxCustomersHr, cupsPerCust, toGoPoundsPerCustomer){
-  this.storeName = "";
-  this.minCustomersHr = 0;
-  this.maxCustomersHr = 0;
+function Store(name, min, max, cPC, tGPPC){
+  this.storeName = name;
+  this.minCustomersHr = min;
+  this.maxCustomersHr = max;
   this.customersPerHour = 0;
-  this.cupsPerCust = 0;
-  this.toGoPoundsPerCustomer = 0;
+  this.cupsPerCust = cPC;
+  this.toGoPoundsPerCustomer = tGPPC;
   allStores.push(this);
 }
 //Methods for the Constructor
 Store.prototype.randomCust = function (minCustomersHr, maxCustomersHr) {
   return this.customersPerHour = Math.floor(Math.random() * (maxCustomersHr - minCustomersHr + 1)) + 14;
 };
-
+// Store.prototype.cupsSoldPerHour = function (allTimesOpen) {
+//   for ()
+// };
 //create a store
 var pikePlaceMarket = new Store("Pike Place Market", 14, 35, 1.2, 0.34);
 console.log(pikePlaceMarket);
