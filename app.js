@@ -24,6 +24,15 @@ Store.prototype.randomCust = function (minCustomersHr, maxCustomersHr) {
 var pikePlaceMarket = new Store("Pike Place Market", 14, 35, 1.2, 0.34);
 console.log(pikePlaceMarket);
 
+//SHOULD BE ALMOST AT THE VERY END - HANDLING EVENTS
+function handleFormSubmit(event) {
+  event.preventDefault();
+
+  var name = event.target.storeName.value;
+  var
+}
+
+
 // var pikePlaceMarket = {
 //   customersPerHour: 0,
 //   minCustomersHr: 14,
