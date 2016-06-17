@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Campfire Coffee Back-End</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="mainTable">
+        <h3> Below you will find the requirements for operations per store per hour. </h3>
+        <table>
+          <thead>
+            <th>Store Name</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="storeName"></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td class="totals"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="htmlForm">
+        <h3> New Store </h3>
+        <form id="form">
+          <fieldset>
+            <legend>Use the form below to estimate operational requirements for a new store</legend>
+            <div>
+              <label for="storeName">Store Name:</label>
+              <input type="text" name="storeName" placeholder="New Store" required>
+            </div>
+            <div>
+              <label for="minCustomersHr">Minimum number of expected Customers:</label>
+              <input type="number" name="minCustomersHr" placeholder="00" required>
+            </div>
+            <div>
+              <label for="maxCustomersHr">Maximum number of expected Customers:</label>
+              <input type="number" name="maxCustomersHr" placeholder="00" required>
+            </div>
+            <div>
+              <label for="cupsPerCust">Average number of cups per customer:</label>
+              <input type="number" name="cupsPerCust" placeholder="00" required>
+            </div>
+            <div>
+              <label for="toGoPoundsPerCustomer">Average number of pounds to go per customer:</label>
+              <input type="number" name="toGoPoundsPerCustomer" placeholder="00" required>
+            </div>
+            <div>
+              <input type="submit" value="Estimate the store!">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </main>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+
+</html>
