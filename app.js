@@ -14,15 +14,31 @@ function Store(name, min, max, cPC, tGPPC){
   allStores.push(this);
 }
 //Methods for the Constructor
-Store.prototype.randomCust = function (minCustomersHr, maxCustomersHr) {
-  return this.customersPerHour = Math.floor(Math.random() * (maxCustomersHr - minCustomersHr + 1)) + 14;
+Store.prototype.randomCust = function () {
+  this.customersPerHour = Math.floor(Math.random() * (this.maxCustomersHr - this.minCustomersHr + 1) + 14);
 };
-// Store.prototype.cupsSoldPerHour = function (allTimesOpen) {
-//   for ()
-// };
+
+Store.prototype.cupsSoldPerHour = function () {
+
+};
+
+//this is the last method
+Store.prototype.doAllTheMethods = function () {
+  this.randomCust();
+};
+
+// for greater cosmos kudos I should update my linter to allow the below logic
+function updateStores() {
+  for (elem of allStores) {
+    elem.doAllTheMethods();
+  }
+}
+
 //create a store
 var pikePlaceMarket = new Store("Pike Place Market", 14, 35, 1.2, 0.34);
 console.log(pikePlaceMarket);
+
+updateStores();
 
 //SHOULD BE ALMOST AT THE VERY END - HANDLING EVENTS
 function handleFormSubmit(event) {
@@ -34,9 +50,16 @@ function handleFormSubmit(event) {
   var tGPPC = parseFloat(event.target.toGoPoundsPerCustomer.value);
   var newStore = new Store(name, min, max, cPC, tGPPC);
 
+  //Clear the form
+  event.target.storeName.value = "";
+  event.target.minCustomersHr.value = null;
+  event.target.maxCustomersHr.value = null;
+  event.target.cupsPerCust.value = null;
+  event.target.toGoPoundsPerCustomer.value = null;
 }
 
 form.addEventListener("submit", handleFormSubmit);
+
 
 
 // var pikePlaceMarket = {
