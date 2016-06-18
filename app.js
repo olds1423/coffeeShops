@@ -27,10 +27,16 @@ console.log(pikePlaceMarket);
 //SHOULD BE ALMOST AT THE VERY END - HANDLING EVENTS
 function handleFormSubmit(event) {
   event.preventDefault();
-
   var name = event.target.storeName.value;
-  var
+  var min = parseFloat(event.target.minCustomersHr.value);
+  var max = parseFloat(event.target.maxCustomersHr.value);
+  var cPC = parseFloat(event.target.cupsPerCust.value);
+  var tGPPC = parseFloat(event.target.toGoPoundsPerCustomer.value);
+  var newStore = new Store(name, min, max, cPC, tGPPC);
+
 }
+
+form.addEventListener("submit", handleFormSubmit);
 
 
 // var pikePlaceMarket = {
