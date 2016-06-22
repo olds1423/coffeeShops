@@ -15,7 +15,7 @@ function Store(name, min, max, cPC, tGPPC){
 }
 //Methods for the Constructor
 Store.prototype.randomCust = function () {
-  this.customersPerHour = Math.floor(Math.random() * (this.maxCustomersHr - this.minCustomersHr + 1) + 14);
+  this.customersPerHour = Math.floor(Math.random() * (this.maxCustomersHr - this.minCustomersHr + 1) + this.minCustomersHr);
 };
 
 Store.prototype.cupsSoldPerHour = function () {
@@ -40,6 +40,7 @@ console.log(pikePlaceMarket);
 
 updateStores();
 
+
 //SHOULD BE ALMOST AT THE VERY END - HANDLING EVENTS
 function handleFormSubmit(event) {
   event.preventDefault();
@@ -50,6 +51,9 @@ function handleFormSubmit(event) {
   var tGPPC = parseFloat(event.target.toGoPoundsPerCustomer.value);
   var newStore = new Store(name, min, max, cPC, tGPPC);
 
+  // In order to not have to run this twice I think I will make a global variable for the user stores - will help with tabling ?
+  updateStores();
+
   //Clear the form
   event.target.storeName.value = "";
   event.target.minCustomersHr.value = null;
@@ -58,8 +62,9 @@ function handleFormSubmit(event) {
   event.target.toGoPoundsPerCustomer.value = null;
 }
 
-form.addEventListener("submit", handleFormSubmit);
 
+
+form.addEventListener("submit", handleFormSubmit);
 
 
 // var pikePlaceMarket = {
