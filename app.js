@@ -26,6 +26,7 @@ function Store(storeName, minCustomersHr, maxCustomersHr, cupsPerCust, toGoPound
   this.cupsPerLb = 16;
   this.openHours = 15;
   allStores.push(this);
+  
 }
 //Methods for the Constructor
 Store.prototype.requirementsPerHour = function () {
