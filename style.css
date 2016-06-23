@@ -5,18 +5,22 @@ html {
 
 body {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: rgb(74, 65, 62);
   font-family: sans-serif;
   margin: 0;
   min-height: 100%;
-  width: 900px;
+  width: 100%;
 }
 
 nav {
   display: flex;
   flex-direction: row;
+  border: 1px solid black;
   width: 100%;
   position: fixed;
-  background-color: blue;
+  background-color: rgba(88, 2, 0, 0.5);
 }
 
 header {
@@ -26,19 +30,21 @@ header {
 main {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: space-around;
   margin-top: 65px;
   min-width: 100%;
 }
 
 section {
-  width: 33%;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(88, 2, 0, 0.5);
+  border: 1px solid black;
+  width: 30%;
+  min-height: 200px;
 }
 
-footer {
-
-}
 
 ul {
 
@@ -47,6 +53,14 @@ ul {
 li {
   display: flex;
   list-style-type: none;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  border: 1px solid black;
+  margin-top: 15px;
+  background-color: rgba(88, 2, 0, 0.5);
 }
 
 #login {
